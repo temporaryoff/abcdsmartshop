@@ -1,0 +1,10 @@
+.custom-button {
+    font-size: 12px;
+  }
+  
+.sidebar-container {
+    width: 20%;
+    max-width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
