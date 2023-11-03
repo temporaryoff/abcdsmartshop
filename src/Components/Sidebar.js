@@ -1,10 +1,23 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import '../GlobalCss/Style.css'
-import MainCard from "./MainCard";
+import "../GlobalCss/Style.css";
 
-function Sidebar({ changeContent }) {
+function Sidebar({children}) {
+  const menuItems = [
+    {
+      path: "/",
+      name: "Dashboard" 
+    },
+    {
+      path: "/",
+      name: "NewProducts" ,
+    },
+    {
+      path: "/",
+      name: "TotalProducts" ,
+    }
+  ]
   return (
     <div className="sidebar-container">
       <div className="accordion" id="accordionPanelsStayOpenExample">
@@ -26,7 +39,12 @@ function Sidebar({ changeContent }) {
             className="accordion-collapse collapse show"
           >
             <div className="accordion-body">
-              <button type="button" class="btn btn-success w-100" onClick={() =>changeContent('conent-1')}>Enter New Product</button>
+              <button
+                type="button"
+                className="btn btn-success w-100"
+              >
+                Enter New Product
+              </button>
             </div>
           </div>
         </div>
@@ -48,7 +66,9 @@ function Sidebar({ changeContent }) {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-            <button type="button" class="btn btn-success w-100">Total Product in Shop</button>
+              <button type="button" className="btn btn-success w-100">
+                Total Product in Shop
+              </button>
             </div>
           </div>
         </div>
@@ -70,7 +90,9 @@ function Sidebar({ changeContent }) {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-            <button type="button" class="btn btn-success w-100">Today Sell</button>
+              <button type="button" className="btn btn-success w-100">
+                Today Sell
+              </button>
             </div>
           </div>
         </div>
@@ -92,14 +114,14 @@ function Sidebar({ changeContent }) {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-            <button type="button" class="btn btn-success w-100">Remain Stock</button>
+              <button type="button" className="btn btn-success w-100">
+                Remain Stock
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div style={{ textAlign: 'right' }}>
-      <MainCard />
-      </div>
+      <div style={{ textAlign: "right" }}></div>
     </div>
   );
 }
