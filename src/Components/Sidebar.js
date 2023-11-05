@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../GlobalCss/Style.css";
+import { NavLink } from "react-router-dom";
 
 function Sidebar({children}) {
   const menuItems = [
@@ -10,11 +11,11 @@ function Sidebar({children}) {
       name: "Dashboard" 
     },
     {
-      path: "/",
+      path: "/newproducts",
       name: "NewProducts" ,
     },
     {
-      path: "/",
+      path: "/totalproducts",
       name: "TotalProducts" ,
     }
   ]
@@ -120,8 +121,16 @@ function Sidebar({children}) {
             </div>
           </div>
         </div>
+        {
+          menuItems.map((item, index)=>(
+              <NavLink to={item.path} key={index} className="link" >
+                <div>{item.name}</div>
+              </NavLink>
+          ))
+        }
       </div>
-      <div style={{ textAlign: "right" }}></div>
+      {/* <div style={{ textAlign: "right" }}></div> */}
+      <main>{children}</main>
     </div>
   );
 }
